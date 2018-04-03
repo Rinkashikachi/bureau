@@ -1,4 +1,3 @@
-from link import Link
 from message import Message
 
 
@@ -17,10 +16,18 @@ class WorkStation:
         self.messages.append(Message(number, self, receiver, content))
 
     def show_message(self, number):
-        print(self.messages[number].print_message())
+        for i in self.messages:
+            if i.number == number:
+                i.print_message()
+                break
 
-#    def send_message(self, number):
-#        self.messages[number]
+    def send_message(self, number, link):
+        length = len(self.messages)
+        for i in range(length):
+            if self.messages[i].number == number:
+                link.messages.append(self.messages[i])
+                del self.messages[i]
+                break
 
     def attach_link(self, link):
         self.links.append(link)
