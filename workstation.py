@@ -1,3 +1,4 @@
+from link import Link
 from message import Message
 
 
@@ -5,6 +6,7 @@ class WorkStation:
     def __init__(self, name):
         self.name = name
         self.ws_type = "WorkStation"
+        self.links = []
         self.messages = []
 
     def print_data(self):
@@ -16,3 +18,10 @@ class WorkStation:
 
     def show_message(self, number):
         print(self.messages[number].print_message())
+
+#    def send_message(self, number):
+#        self.messages[number]
+
+    def attach_link(self, link):
+        self.links.append(link)
+        return self

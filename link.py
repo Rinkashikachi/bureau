@@ -1,8 +1,9 @@
 class Link:
     def __init__(self, name, first_node, second_node):
+        self.messages = []
         self.name = name
-        self.first_node = first_node
-        self.second_node = second_node
+        self.first_node = first_node.attach_link(self)
+        self.second_node = second_node.attach_link(self)
 
     def print_data(self):
         print("---")
