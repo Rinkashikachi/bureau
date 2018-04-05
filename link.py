@@ -1,9 +1,12 @@
+
+
 class Link:
-    def __init__(self, name, first_node, second_node):
+    def __init__(self, controller, name, first_node, second_node):
         self.messages = []
         self.name = name
         self.first_node = first_node.attach_link(self)
         self.second_node = second_node.attach_link(self)
+        controller.link_creation(self)
 
     def node(self, asking):
         if self.first_node == asking:
@@ -24,5 +27,9 @@ class Link:
     def show_message(self, number):
         for i in range(len(self.messages)):
             if self.messages[i].number == number:
-                print(self.messages[i])
+                self.messages[i].print_message()
                 break
+    """
+    def send_message(self):
+        print("Апельсин")
+    """
