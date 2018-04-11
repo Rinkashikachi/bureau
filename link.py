@@ -29,7 +29,4 @@ class Link:
                 break
 
     def send_message(self):
-        print(len(self.messages))
-        self.messages.pop()
-        print(len(self.messages))
-        """print("Апельсин")"""
+        self.node(self.messages[0].receiver).messages_received.append(self.messages.pop(0))
