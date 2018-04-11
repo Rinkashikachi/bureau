@@ -1,5 +1,3 @@
-
-
 class Link:
     def __init__(self, controller, name, first_node, second_node):
         self.messages = []
@@ -29,7 +27,9 @@ class Link:
             if self.messages[i].number == number:
                 self.messages[i].print_message()
                 break
-    """
+
     def send_message(self):
-        print("Апельсин")
-    """
+        print(len(self.messages))
+        self.messages.pop()
+        print(len(self.messages))
+        """print("Апельсин")"""
