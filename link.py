@@ -4,6 +4,8 @@ class Link:
         self.name = name
         self.first_node = first_node.attach_link(self)
         self.second_node = second_node.attach_link(self)
+        print("*Connection " + self.name + " between " + self.first_node.name +
+              " and " + self.second_node.name + " established*")
 
     def node(self, asking):
         if self.first_node == asking:

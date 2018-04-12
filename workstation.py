@@ -8,6 +8,7 @@ class WorkStation:
         self.links = []
         self.messages_toSend = []
         self.messages_received = []
+        print("*" + self.ws_type + " " + self.name + " created*")
 
     def print_info(self):
         print("name: " + self.name)
