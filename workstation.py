@@ -9,7 +9,7 @@ class WorkStation:
         self.messages_toSend = []
         self.messages_received = []
 
-    def print_data(self):
+    def print_info(self):
         print("name: " + self.name)
         print("ws_type: " + self.ws_type)
 
