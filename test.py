@@ -1,10 +1,11 @@
 from controller import Controller
 
+
 controller = Controller()
 controller.create_workstations(2)
 ws1 = controller.workstations[0]
 ws2 = controller.workstations[1]
-controller.create_link("00", ws1, ws2)
+controller.create_lnk(ws1, ws2)
 link1 = controller.links[0]
 print("\n!!!!!-Controller info: ")
 controller.print_info()

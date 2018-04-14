@@ -15,8 +15,21 @@ class Controller:
         for i in range(int(number)):
             self.workstations.append(WorkStation("WS"+str(i+1)))
 
-    def create_link(self, name, first_node, second_node):
-        self.links.append(Link(name, first_node, second_node))
+    def create_link(self):
+        print("Enter the first node: ")
+        first_node = input()
+        for node in self.workstations:
+            if node.name == first_node:
+                first_node = node
+        print("Enter the second node: ")
+        second_node = input()
+        for node in self.workstations:
+            if node.name == second_node:
+                second_node = node
+        self.links.append(Link(str(len(self.links)-1), first_node, second_node))
+
+    def create_lnk(self, first_node, second_node):
+        self.links.append(Link(str(len(self.links) - 1), first_node, second_node))
 
     def check_links(self):
         for link in self.links:
