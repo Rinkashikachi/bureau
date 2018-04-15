@@ -10,19 +10,16 @@ class Controller:
 
     def create_workstations(self, number=0):
         if number == 0:
-            print("How many workstations do you want to create? ")
-            number = input()
+            number = input("Number of WorkStations you want to create: ")
         for i in range(int(number)):
             self.workstations.append(WorkStation("WS"+str(i+1)))
 
     def create_link(self):
-        print("Enter the first node: ")
-        first_node = input()
+        first_node = input("Enter the first node: ")
         for node in self.workstations:
             if node.name == first_node:
                 first_node = node
-        print("Enter the second node: ")
-        second_node = input()
+        second_node = input("Enter the second node: ")
         for node in self.workstations:
             if node.name == second_node:
                 second_node = node
