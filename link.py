@@ -1,7 +1,8 @@
 class Link:
-    def __init__(self, name, first_node, second_node):
+    def __init__(self, name, length, first_node, second_node):
         self.messages = []
         self.name = name
+        self.length = length
         self.first_node = first_node.attach_link(self)
         self.second_node = second_node.attach_link(self)
         print("*Connection " + self.name + " between " + self.first_node.name +
@@ -29,5 +30,7 @@ class Link:
                 self.messages[i].print_message()
                 break
 
-    def send_message(self):
+    def transmission(self):
+        # for i in range(self.length):
         self.node(self.messages[0].receiver).messages_received.append(self.messages.pop(0))
+
